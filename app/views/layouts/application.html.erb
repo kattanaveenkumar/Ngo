@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ngo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome To NGO!</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<%= root_path %>">Home</a></li>
+        <li><a href="<%= events_path %>">Events</a></li>
+        <li><a href="#">About Us</a></li> 
+        <li><a href="#">Contact Us</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="myCarousel" class="carousel slide">
+
+  <ol class = "carousel-indicators">
+          <li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+          <li data-target = "#myCarousel" data-slide-to = "1"></li>
+          <li data-target = "#myCarousel" data-slide-to = "2"></li>
+  </ol>
+    <div class="carousel-inner">
+
+  <div class= "item-active">
+        <img src = "beach.jpg" alt = "Beach" class="image-responsive">
+        <div class = "carousel-caption">
+          <h3> Beach </h3>
+        </div>
+  </div>
+
+<div class= "item">
+    <img src = "sun.jpg" alt = "Sun" class="image-responsive">
+        <div class = "carousel-caption">
+          <h3> Sun </h3>
+        </div>
+  </div>
+
+  <div class= "item">
+    <img src = "park.jpg" alt = "Park" class="image-responsive">
+        <div class = "carousel-caption">
+          <h3> Park </h3>
+        </div>
+
+  </div>
+</div>
+
+  <a class = "carousel-control" "left" href = "#myCarousel" data-slide = "prev">
+    <span class = "icon-prev"> </span>
+  </a>
+
+  <a class = "carousel-control" "right" href = "#myCarousel" data-slide = "next">
+    <span class = "icon-next"> </span>
+  </a>
+
+</div>
+<%= yield %>
+
+</body>
+</html>

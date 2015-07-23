@@ -1,0 +1,69 @@
+<%= form_for @event, :html => { :class => "form-horizontal event" } do |f| %>
+
+      <div class="panel-body">
+        <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+      </div>
+      
+
+    </div>
+  
+  
+
+  <div class="form-group">
+    <%= f.label :state, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :state, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:state) %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :event_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :event_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:event_date) %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :event_time, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :event_time, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:event_time) %>
+  </div>
+
+
+      <div class="form-group">
+         <%= f.label :event_venue, :class => 'control-label col-lg-2' %>
+         <div class="col-lg-10">
+            <%= f.text_field :event_venue, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:event_venue) %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :avatar_file_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.file_field :avatar  %>
+    </div>
+    <%=f.error_span(:event_venue) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                events_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
